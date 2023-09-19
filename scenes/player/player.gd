@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 var moveSpeed = 500
 # Called when the node enters the scene tree for the first time.
@@ -7,11 +7,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	# input
 	var direction = Input.get_vector("left","right","up","down")
-	position += delta * direction * moveSpeed
+	velocity = direction * moveSpeed
+	move_and_slide()
 	
 	# shoot laser
 	if Input.is_action_pressed("primary action"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2ium5mrv21l2"]
+[gd_scene load_steps=9 format=3 uid="uid://2ium5mrv21l2"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_00g5f"]
 [ext_resource type="Texture2D" uid="uid://bjq0e27ap2iao" path="res://graphics/player/player.png" id="1_nvju4"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d06bd"]
 radius = 68.1836
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gelr7"]
+polygon = PackedVector2Array(-61, -19, -50, -42, -22, -56, 14, -63, 35, -53, 47, -33, 64, -24, 76, -11, 85, -12, 107, -4, 123, 2, 132, 11, 133, 22, 129, 32, 122, 36, 108, 36, 96, 45, 93, 52, 61, 52, 57, 43, 42, 40, 24, 47, -9, 61, -35, 55, -44, 34, -54, 20, -62, 0)
 
 [sub_resource type="Gradient" id="Gradient_6wi24"]
 offsets = PackedFloat32Array(0, 0.133333, 0.785185, 1)
@@ -36,13 +39,16 @@ hue_variation_max = 0.2
 collision_mask = 31
 script = ExtResource("1_00g5f")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d06bd")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_gelr7")
+
 [node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(36, 0)
 rotation = 1.5708
 texture = ExtResource("1_nvju4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_d06bd")
 
 [node name="LaserTimer" type="Timer" parent="."]
 wait_time = 0.5

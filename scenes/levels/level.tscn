@@ -81,7 +81,7 @@ position = Vector2(-152, 496)
 [node name="Gate" parent="." instance=ExtResource("2_qtvd3")]
 
 [node name="House" parent="." instance=ExtResource("7_linmu")]
-position = Vector2(-2349, 3695)
+position = Vector2(-2098, 2953)
 rotation = -2.11356
 
 [node name="Player" parent="." instance=ExtResource("4_dm6w6")]

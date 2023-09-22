@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b088dovw503c5"]
+[gd_scene load_steps=14 format=3 uid="uid://b088dovw503c5"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_lbs1x"]
 [ext_resource type="Texture2D" uid="uid://b8vpf57l7mi5q" path="res://graphics/ground/stones.png" id="2_f8ssw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://2ium5mrv21l2" path="res://scenes/player/player.tscn" id="4_dm6w6"]
 [ext_resource type="Texture2D" uid="uid://8ct1ftosjl64" path="res://graphics/tilesets/outside_walls.png" id="4_yp5a2"]
 [ext_resource type="Texture2D" uid="uid://kf0btbxpefhn" path="res://graphics/tilesets/soil.png" id="5_yetpy"]
+[ext_resource type="PackedScene" uid="uid://icdeupm2tydm" path="res://scenes/objects/steam_vent.tscn" id="6_quvjd"]
 [ext_resource type="PackedScene" uid="uid://b8jw761hd3u1p" path="res://scenes/houses/house.tscn" id="7_linmu"]
 [ext_resource type="Texture2D" uid="uid://m3elx6ipr3la" path="res://graphics/decals/moss/moss_2.png" id="8_03g3e"]
 
@@ -73,6 +74,9 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -65530, 65536, 2, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 131072, 1, 10, 0, 2, 65546, 0, 2, 131082, 0, 2, 196618, 0, 3, -131066, 0, 2, -196602, 0, 2, -262138, 0, 1, -8, 0, 0)
+
+[node name="SteamVent" parent="." instance=ExtResource("6_quvjd")]
+position = Vector2(-152, 496)
 
 [node name="Gate" parent="." instance=ExtResource("2_qtvd3")]
 

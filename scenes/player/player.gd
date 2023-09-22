@@ -34,6 +34,7 @@ func _process(_delta):
 		var selected_marker = laser_markers.pick_random()
 		can_laser = false
 		$LaserTimer.start()
+		$LaserParticles.emitting = true
 		fire_laser.emit(selected_marker.global_position, player_direction)
 		
 	# shoot grenade

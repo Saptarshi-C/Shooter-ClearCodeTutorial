@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b088dovw503c5"]
+[gd_scene load_steps=15 format=3 uid="uid://b088dovw503c5"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_lbs1x"]
 [ext_resource type="Texture2D" uid="uid://b8vpf57l7mi5q" path="res://graphics/ground/stones.png" id="2_f8ssw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://icdeupm2tydm" path="res://scenes/objects/steam_vent.tscn" id="6_quvjd"]
 [ext_resource type="PackedScene" uid="uid://b8jw761hd3u1p" path="res://scenes/houses/house.tscn" id="7_linmu"]
 [ext_resource type="Texture2D" uid="uid://m3elx6ipr3la" path="res://graphics/decals/moss/moss_2.png" id="8_03g3e"]
+[ext_resource type="PackedScene" uid="uid://dform3wn36uht" path="res://scenes/objects/light_fan_animation.tscn" id="9_8ab2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mptk4"]
 resource_name = "Walls"
@@ -75,14 +76,22 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -65530, 65536, 2, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 131072, 1, 10, 0, 2, 65546, 0, 2, 131082, 0, 2, 196618, 0, 3, -131066, 0, 2, -196602, 0, 2, -262138, 0, 1, -8, 0, 0)
 
-[node name="SteamVent" parent="." instance=ExtResource("6_quvjd")]
+[node name="Moss2" type="Sprite2D" parent="Ground"]
+position = Vector2(3932, -32)
+texture = ExtResource("8_03g3e")
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("6_quvjd")]
 position = Vector2(-152, 496)
 
-[node name="Gate" parent="." instance=ExtResource("2_qtvd3")]
-
-[node name="House" parent="." instance=ExtResource("7_linmu")]
+[node name="House" parent="Ground" instance=ExtResource("7_linmu")]
 position = Vector2(-2098, 2953)
 rotation = -2.11356
+scale = Vector2(1, 1)
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("9_8ab2w")]
+position = Vector2(-2102, 1167)
+
+[node name="Gate" parent="." instance=ExtResource("2_qtvd3")]
 
 [node name="Player" parent="." instance=ExtResource("4_dm6w6")]
 position = Vector2(578, 396)
@@ -92,10 +101,6 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
-
-[node name="Moss2" type="Sprite2D" parent="."]
-position = Vector2(3932, -32)
-texture = ExtResource("8_03g3e")
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="fire_grenade" from="Player" to="." method="_on_player_fire_grenade"]

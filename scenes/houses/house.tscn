@@ -326,6 +326,19 @@ layer_2/tile_data = PackedInt32Array(196610, 327680, 8, 131074, 65536, 6, 65538,
 position = Vector2(2065, 247)
 rotation = 1.5708
 
+[node name="SimpleLight2" parent="." instance=ExtResource("2_bls5a")]
+position = Vector2(-881, -163)
+rotation = 4.71239
+
 [node name="WallLamp" parent="." instance=ExtResource("3_wfgk1")]
-position = Vector2(550, -501)
+position = Vector2(550, -516)
 rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+
+[node name="WallLamp2" parent="." instance=ExtResource("3_wfgk1")]
+position = Vector2(483, 1251)
+scale = Vector2(0.7, 0.7)
+
+[node name="WallLamp3" parent="." instance=ExtResource("3_wfgk1")]
+position = Vector2(-471, 1251)
+scale = Vector2(0.7, 0.7)

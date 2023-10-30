@@ -13,13 +13,13 @@ polygon = PackedVector2Array(-213.333, -20, -213.333, 36.6667, -226.667, 26.6667
 [node name="WallLamp" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_g5pec")
 
 [node name="WallLampImage" type="Sprite2D" parent="."]
-position = Vector2(506, 144)
 texture = ExtResource("1_axii8")
+region_enabled = true
+region_rect = Rect2(0.5, -0.5, 841.318, 174)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.171875, 0.589844, 0.589844, 1)
@@ -28,12 +28,13 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.0
 texture = ExtResource("2_70i4l")
-texture_scale = 5.0
+texture_scale = 3.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-0.332993, 6.3333)
 occluder = SubResource("OccluderPolygon2D_s8f2u")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(-3.33333, 0)
+position = Vector2(-3.66632, 6.3333)
 scale = Vector2(-1, 1)
 occluder = SubResource("OccluderPolygon2D_s8f2u")

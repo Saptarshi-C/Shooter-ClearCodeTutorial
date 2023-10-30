@@ -5,9 +5,10 @@ signal fire_laser(laser_position, laser_direction)
 signal fire_grenade(grenade_position, grenade_direction)
 
 
-var moveSpeed = 500
+@export var moveSpeed: int = 500
 var can_laser: bool = true
 var can_grenade: bool = true
+var speed: int = moveSpeed
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +21,7 @@ func _process(_delta):
 	
 	# input
 	var direction = Input.get_vector("left","right","up","down")
-	velocity = direction * moveSpeed
+	velocity = direction * speed
 	move_and_slide()
 	
 	# rotate player
